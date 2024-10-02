@@ -1,1 +1,31 @@
 ---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: systmms-github-locations
+spec:
+  type: url
+  targets:
+    - https://github.com/systmms/dev/blob/main/catalog-info.yaml # Private catalog sprawl
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: systmms
+  description: Systmms devs
+spec:
+  type: business-unit
+  profile:
+    displayName: Systmms
+    email: admin@systmms.dev
+    picture: https://avatars.githubusercontent.com/u/80997386
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: Systmms Projects
+  description: Everything under Systmms
+spec:
+  owner: systmms
+---
